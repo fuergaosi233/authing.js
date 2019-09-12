@@ -803,6 +803,7 @@ Authing.prototype = {
             browser
             password
             registerInClient
+            registerMethod
             token
             tokenExpiredAt
             loginsCount
