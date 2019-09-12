@@ -796,6 +796,7 @@ Authing.prototype = {
             username
             nickname
             phone
+            unionid
             company
             photo
             browser
