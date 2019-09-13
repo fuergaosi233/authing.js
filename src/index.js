@@ -797,11 +797,15 @@ Authing.prototype = {
             emailVerified
             username
             nickname
+            phone
+            unionid
+            oauth
             company
             photo
             browser
             password
             registerInClient
+            registerMethod
             token
             tokenExpiredAt
             loginsCount
