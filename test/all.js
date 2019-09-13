@@ -44,6 +44,7 @@ test("users:register 用户密码注册，保留原始密码字段内容", async
     let res = await validAuth.register({
       email,
       password: "123456a",
+      keepPassword: true
     });
     t.assert(res.passowrd === '123456a');
     t.pass();
