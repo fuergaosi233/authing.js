@@ -565,8 +565,10 @@ Authing.prototype = {
         $photo: String,
         $company: String,
         $browser: String,
+        $invitationCode: String,
+        $keepPassword: Boolean
       ) {
-          register(userInfo: {
+          register(keepPassword: $keepPassword, invitationCode: $invitationCode, userInfo: {
             unionid: $unionid,
             openid: $openid,
             email: $email,

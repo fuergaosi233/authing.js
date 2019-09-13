@@ -29,7 +29,7 @@ test("users:register 用户密码注册", async t => {
   try {
     let res = await validAuth.register({
       email,
-      password: "123456a"
+      password: "123456a",
     });
     t.assert(res.email);
     t.pass();
@@ -37,7 +37,20 @@ test("users:register 用户密码注册", async t => {
     t.fail(JSON.stringify(err));
   }
 });
-
+test("users:register 用户密码注册，保留原始密码字段内容", async t => {
+  const validAuth = await auth;
+  let email = randomEmail();
+  try {
+    let res = await validAuth.register({
+      email,
+      password: "123456a",
+    });
+    t.assert(res.passowrd === '123456a');
+    t.pass();
+  } catch (err) {
+    t.fail(JSON.stringify(err));
+  }
+});
 test("users:list 用户池用户列表", async t => {
   const validAuth = await auth;
   try {
