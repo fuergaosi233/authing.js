@@ -1,8 +1,8 @@
 const test = require("ava");
 const Authing = require("../src");
 
-const clientId = "5d5921ffaa016518f658498d";
-const secret = "ada050cb682af5b3ce09acc6988a4950";
+const clientId = "5da3fe0411e283f7ddf500bc";
+const secret = "35e69529d9b2626496bf9f4686799524";
 
 //线上
 // const secret = 'b41a29583618d8e9de201d5e80db7056';
@@ -324,7 +324,7 @@ test("user:sendVerifyEmail 发送验证邮件", async t => {
   t.assert(res.status === true);
 });
 
-test("user:checkLoginStatus 检查登录状态", async t => {
+test.only("user:checkLoginStatus 检查登录状态", async t => {
   const validAuth = await auth;
   let email = randomEmail();
   let user = await validAuth.register({
@@ -340,6 +340,10 @@ test("user:checkLoginStatus 检查登录状态", async t => {
   t.assert(res.status === true);
   t.assert(res.code === 200);
   t.assert(res.message === "已登录");
+  t.assert(res.token.data.email);
+  t.assert(res.token.data.id);
+  t.assert(res.token.iat);
+  t.assert(res.token.exp);
 });
 
 test("user:decodeToken 解析 jwt token", async t => {

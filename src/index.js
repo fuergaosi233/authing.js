@@ -326,6 +326,16 @@ Authing.prototype = {
           status
           code
           message
+          token {
+            data {
+              email
+              id
+              clientId
+              unionid
+            }
+            iat
+            exp
+          }
         }
       }`,
       variables: {
