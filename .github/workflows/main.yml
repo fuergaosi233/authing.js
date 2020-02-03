@@ -13,5 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm build
-      - run: npm publish
+      - name: build
+        run: npm build
+      - name: npm push
+        run: npm publish
