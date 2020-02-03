@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: 12
       - name: build
-        run: npm build
+        run: npm run build
       - name: npm push
-        run: npm publish
+        run: npm run trypush
