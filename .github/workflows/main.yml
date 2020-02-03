@@ -17,9 +17,10 @@ jobs:
         run: |
              npm install 
              npm run build
+         
       - name: npm push
         run: |
              npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
              npm run trypush
         env:
-             NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+             NPM_TOKEN: '${{secrets.NPM_AUTH_TOKEN}}'
