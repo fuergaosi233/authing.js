@@ -13,7 +13,8 @@
 		"test": "export BUILD_TARGET=node && ava -vs",
 		"coverage": "nyc report --reporter=text-lcov > coverage.lcov | codecov",
 		"start": "nyc --reporter html ava -vs && open ./.nyc_output/index.html",
-		"build": "webpack --config webpack.config.js"
+		"build": "webpack --config webpack.config.js",
+		"trypush" : "npm publish || true"
 	},
 	"repository": {
 		"type": "git",
