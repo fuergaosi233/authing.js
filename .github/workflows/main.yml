@@ -21,6 +21,6 @@ jobs:
       - name: npm push
         run: |
              npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-             npm run trypush
+             npm publish
         env:
              NPM_TOKEN: '${{secrets.NPM_AUTH_TOKEN}}'
